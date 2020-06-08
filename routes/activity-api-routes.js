@@ -6,7 +6,7 @@ module.exports = function(app) {
             include: [db.Activity]
         }).then(function(activityGetResult) {
             res.json(activityGetResult)
-        })
+        });
     })
 
     app.post("/api/activity", function(req,res) {

@@ -26,8 +26,9 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
     db.User.findAll({
-      include: [db.Sidekick]
+      include: [db.Sidekick, db.Activity]
   }).then(function(sidekickGetResults) {
+    console.log(sidekickGetResults)
     console.log(sidekickGetResults[0].dataValues);
     res.render("members", sidekickGetResults[0].dataValues);
   })

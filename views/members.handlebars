@@ -49,9 +49,17 @@
 	            <button data-updatetask="{{id}}" data-category="{{category}}" class="update-activity">Update</button>
                 <button data-deletetask="{{id}}" class="delete-activity">Delete</button>
 
-                {{#each Activity}}
-                {{> activity-block}}
+                <ul>
+                {{#each activity}}
+  	                <li>
+  	                    <p>ID: {{this.activityName}}</p>
+  	                </li>
                 {{/each}}
+                </ul>
+
+                {{!-- {{#each Activity}}
+                {{> activity-block}}
+                {{/each}} --}}
             </div>
         </div>
     </div>
